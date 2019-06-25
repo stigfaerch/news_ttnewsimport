@@ -5,17 +5,9 @@
   "homepage": "https://github.com/fsaris/news_ttnewsimport",
   "license": "GPL-2.0+",
   "keywords": ["TYPO3 CMS"],
-  "require": {
-    "typo3/cms-core": ">=6.2.4,<9.9.99"
-  },
   "autoload": {
     "psr-4": {
       "BeechIt\\NewsTtnewsimport\\": "Classes"
-    }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "1.0.x-dev"
     }
   }
 }
