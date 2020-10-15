@@ -286,7 +286,7 @@ class TtNewsPluginMigrate
     {
         $data = array();
         $data['tt_content']['NEW'] = array(
-            'hidden' => 1,
+            'hidden' => 0,
             'pid' => $row['uid'] * -1
         );
 

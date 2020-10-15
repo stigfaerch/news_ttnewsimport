@@ -103,7 +103,9 @@ class TTNewsNewsDataProviderService implements DataProviderServiceInterface, \TY
 				'related_links' => array_key_exists('tx_tlnewslinktext_linktext', $row) ? $this->getRelatedLinksTlNewsLinktext($row['links'], $row['tx_tlnewslinktext_linktext']) : $this->getRelatedLinks($row['links']),
 				'content_elements' => $row['tx_rgnewsce_ce'],
 				'import_id' => $row['uid'],
-				'import_source' => $this->importSource
+				'import_source' => $this->importSource,
+                'tx_flexbox_enable' => $row['tx_flexbox_enable'],
+                'tx_flexbox_enable_infoscreen' => $row['tx_flexbox_enable_infoscreen']
 			);
 		}
 		$GLOBALS['TYPO3_DB']->sql_free_result($res);
