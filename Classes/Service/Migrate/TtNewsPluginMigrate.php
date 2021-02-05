@@ -169,6 +169,15 @@ class TtNewsPluginMigrate
                     break;
             }
         }
+        if(
+            ($new['data']['additional']['lDEF']['settings.hidePagination']['vDEF'] ?? false) &&
+            (!$new['data']['additional']['lDEF']['settings.hidePagination']['vDEF']) &&
+            ($new['data']['additional']['lDEF']['settings.limit']['vDEF'] ?? false) &&
+            ($new['data']['additional']['lDEF']['settings.limit']['vDEF'])
+        ) {
+            $this->addFieldToArray($new,$new['data']['additional']['lDEF']['settings.limit']['vDEF'], 'settings.list.paginate.itemsPerPage', 'additional');
+            $this->addFieldToArray($new,'', 'settings.limit', 'additional');
+        }
 
         return $this->array2xml($new, true);
     }
